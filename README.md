@@ -2,6 +2,23 @@
 
 This project is a full-stack application built with .NET 8.
 
+## Prerequisites
+
+- .NET SDK 8.0
+- PostgreSQL
+
+
+## Setup
+
+1. Clone the repository
+2. Update database connection string in `src/Ambev.DeveloperEvaluation.WebApi/appsettings.json`
+3. Install dependencies:
+
+```bash
+# Backend
+dotnet restore
+```
+
 ## Database Migrations
 
 To run the database migrations:
@@ -11,7 +28,19 @@ cd src/Ambev.DeveloperEvaluation.WebApi
 dotnet ef database update
 ```
 
-## Docker Commands
+
+## Running the Application
+
+### Backend API
+
+```bash
+cd src/Ambev.DeveloperEvaluation.WebApi
+dotnet run
+```
+The API will be available at `http://0.0.0.0:5000`
+
+
+### Docker Commands
 
 1. Build Docker Image:
 ```bash
@@ -29,50 +58,8 @@ After running the container, access the Swagger documentation at:
 http://localhost:5000/swagger/index.html
 ```
 
-## Prerequisites
 
-- .NET SDK 8.0
-- PostgreSQL
-
-## Project Structure
-
-- `src/Ambev.DeveloperEvaluation.WebApi` - Backend API
-- `tests/` - Unit, Integration, and Functional tests
-
-## Setup
-
-1. Clone the repository
-2. Update database connection string in `src/Ambev.DeveloperEvaluation.WebApi/appsettings.json`
-3. Install dependencies:
-
-```bash
-# Backend
-dotnet restore
-
-# Frontend
-cd src/Ambev.DeveloperEvaluation.WebApp
-npm install
-```
-
-## Running the Application
-
-### Backend API
-
-```bash
-cd src/Ambev.DeveloperEvaluation.WebApi
-dotnet run
-```
-The API will be available at `http://0.0.0.0:5000`
-
-### Frontend Application
-
-```bash
-cd src/Ambev.DeveloperEvaluation.WebApp
-npm start
-```
-The application will be available at `http://0.0.0.0:4200`
-
-## Running Tests
+### Running Tests
 
 ```bash
 # Run all tests
